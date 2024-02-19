@@ -4,7 +4,15 @@ module.exports = {
     entry: './src/index.js',
     devtool: 'inline-source-map',
     output: {
-        filename: '[name].js',
+        filename: 'main.js',
         path: path.resolve(__dirname, 'dist'),
+    },
+    module: {
+        rules: [
+            {
+                test: /\.jpg/,
+                type: 'asset/resource'
+            },
+        ],
     },
 };
